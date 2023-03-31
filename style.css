@@ -1,83 +1,181 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 
 }
-body{
-    background: linear-gradient(to bottom,rgb(5, 120, 116) 30%,whitesmoke 30% 70%);
+
+body {
+    background: linear-gradient(to bottom, rgb(5, 120, 116) 30%, whitesmoke 30% 70%);
     height: 100vh;
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
 }
-.container{
+
+.container {
     margin-top: 2rem;
     width: 75rem;
     height: 40rem;
-    background-color: red; 
     display: flex;
 }
-li{
+
+li {
     list-style: none;
 }
-.contact{
+
+img {
+    width: 3.5rem;
+    height: 3.5rem;
+    border-radius: 50%;
+}
+
+.contact-container {
     width: 30%;
     height: 100%;
-    background-color: white;
     display: flex;
     flex-direction: column;
 }
-.profile{
+
+.profile {
     width: 100%;
     height: 20%;
     flex-shrink: 0;
 }
-.avatar{
+
+.avatar {
     display: flex;
-    background-color: pink;
     width: 100%;
     height: 50%;
     justify-content: space-between;
     align-items: center;
+    padding: 0.5rem;
+    background-color: whitesmoke;
+   
 }
-.avatar-icon{
+
+.avatar-icon {
     display: flex;
+    align-items: center;
 }
-.notification{
+
+.avatar-icon li {
+    margin: 0.5rem;
+    font-size: 1.5rem;
+    color: lightgrey;
+    cursor: pointer;
+}
+
+
+.name {
+    vertical-align: middle;
+
+}
+
+.name {
+    font-weight: bold;
+    
+}
+
+.notification {
     width: 100%;
     height: 50%;
     display: flex;
     background-color: rgb(80, 179, 246);
     display: flex;
     align-items: center;
+    padding: 0.5rem;
 }
 
+.bell {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: whitesmoke;
+    border-radius: 50%;
+    color: rgb(128, 222, 251);
+    margin-right: 0.5rem;
+    cursor: pointer;
+}
 
-.contact-list{
+.new-mes {
+    font-size: small;
+}
+
+.notification a {
+    color: grey;
+    font-size: small;
+}
+
+.contact-list {
     width: 100%;
     height: calc(100% - 20%);
 }
-.search{
+
+.search {
     width: 100%;
     height: 10%;
-    background-color: brown;
     display: flex;
     align-items: center;
+    justify-content: center;
+    position: relative;
+    background-color: whitesmoke;
 }
-.contact-box{
+
+.fa-magnifying-glass {
+    color: grey;
+    position: absolute;
+    left: 10%;
+}
+
+[type="text"] {
+    width: 95%;
+    height: 60%;
+    text-align: center;
+    border: 1px solid lightgray;
+    border-radius: 0.5rem;
+}
+
+.contact-box {
     height: calc(100% - 10%);
     flex-grow: 1;
     width: 100%;
     overflow-y: auto;
-    background-color: yellowgreen;
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-name {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 0.5rem solid rgb(226, 226, 226);
+    padding: 10px;
+}
+
+.contact-avatar {
+    display: flex;
+}
+
+.contact-avatar>img {
+    margin-right: 0.5rem
+}
+
+.last-ms {
+    font-size: small;
+    color: gray;
+}
+
+.time {
+    font-size: smaller;
+    color: grey;
 }
 
 
-
 /* Colonna di destra chat */
-.chat{
+.chat {
     width: 70%;
     height: 100%;
     background-color: blue;
@@ -85,7 +183,7 @@ li{
     flex-direction: column;
 }
 
-.profile-chat{
+.profile-chat {
     width: 100%;
     height: 10%;
     background-color: gold;
@@ -94,17 +192,20 @@ li{
     align-items: center;
     justify-content: space-between;
 }
-.chat-icon{
+
+.chat-icon {
     display: flex;
 }
-.chat-box{
+
+.chat-box {
     width: 100%;
     flex-grow: 1;
     background-image: url(./img/mine.jpg);
     padding: 1.5625rem;
     overflow-y: auto;
 }
-.input-chat{
+
+.input-chat {
     width: 100%;
     height: 15%;
     background-color: blueviolet;
