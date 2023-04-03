@@ -20,9 +20,9 @@
               <div class="avatar">
                 <div>
                   <img
-                    src="img/avatar_io.jpg"
-                    alt=""
-                    id=""
+                    src="./img/avatar_io.jpg"
+                    alt="avatar-personale"
+                    id="avatar-personale"
                   />
                   <span class="name">Sofia</span>
                 </div>
@@ -45,8 +45,9 @@
                 <i class="fa-solid fa-magnifying-glass search-icon"></i>
                 <input type="text" placeholder="Cerca o inizia una nuova chat" />
               </div>
+              <!-- Contenitori dei contatti  -->
               <div class="contact-box">
-                <div class="contact-name" v-for="contact in contacts">
+                <div class="contact-name" v-for="(contact,index) in contacts" @click="userSelect(index)" :class="{select: isSelected(index)}">
                   <div class="contact-avatar">
                     <img :src="contact.avatar" alt="contact.name" />
                     <div>
@@ -63,11 +64,12 @@
           </div>
           <!-- Colonnan di destra  -->
           <div class="chat">
+            <!-- contatto della chat  -->
             <header class="profile-chat">
               <div class="chat-avatar">
-                <img src="./img/avatar_1.jpg" alt="" />
+                <img :src="contacts[userSelected].avatar" alt="contacts[userSelected].name" />
                 <div>
-                  <div>{{ contacts[0].name}}</div>
+                  <div>{{ contacts[userSelected].name}}</div>
                   <div class="last-ms">Ultimo accesso alle 12:00</div>
                 </div>
               </div>
@@ -79,11 +81,10 @@
             </header>
             <!-- Contenitore dei messaggi -->
             <main class="chat-box">
-              <div class="msg" :class="{sent: message.status}" v-for="message in contacts[0].messages">
-                <div class="txt-ms"> {{ message.message}} </div>
+              <div class="msg" :class="{sent: message.status}" v-for="message in contacts[userSelected].messages">
+                  <div class="txt-ms"> {{ message.message}} </div>
                   <div class="time-ms">12:00</div>
-              </div>
-              </div>
+              </div> 
             </main>
             <!-- Contenitore dell'inserimento del testo per la chat -->
             <footer class="input-chat">
@@ -96,6 +97,7 @@
           </div>
         </div>
       </div>
+  
       <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
                     <script src="./app.js"></script>
                 </body>
