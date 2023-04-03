@@ -67,7 +67,7 @@
               <div class="chat-avatar">
                 <img src="./img/avatar_1.jpg" alt="" />
                 <div>
-                  <div>Michele</div>
+                  <div>{{ contacts[0].name}}</div>
                   <div class="last-ms">Ultimo accesso alle 12:00</div>
                 </div>
               </div>
@@ -79,19 +79,10 @@
             </header>
             <!-- Contenitore dei messaggi -->
             <main class="chat-box">
-              <div class="msg sent">
-                  <div class="txt-ms">Hai portato a spasso il cane?</div>
+              <div class="msg" :class="{sent: message.status}" v-for="message in contacts[0].messages">
+                <div class="txt-ms"> {{ message.message}} </div>
                   <div class="time-ms">12:00</div>
               </div>
-              <div class="msg sent">
-                <div class="txt-ms">Ricordati di stendere i panni</div>
-                <div class="time-ms">12:00</div>
-            </div>
-              <div class="msg recived">
-                  <div class="txt-ms">Tutto fatto !</div>
-                  <div class="time-ms">12:00</div>
-              </div>
-      </div>
               </div>
             </main>
             <!-- Contenitore dell'inserimento del testo per la chat -->
