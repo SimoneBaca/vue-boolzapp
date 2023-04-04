@@ -25,6 +25,9 @@ img{
     height: 3.5rem;
     border-radius: 50%;
 }
+[v-cloak]{
+    display: none;
+}
 /* Colonna di sinistra contatti */
 .contact-container{
     width: 40%;
